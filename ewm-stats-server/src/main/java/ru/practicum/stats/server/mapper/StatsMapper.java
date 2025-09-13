@@ -4,7 +4,8 @@ import ru.practicum.stats.dto.EndpointHitDto;
 import ru.practicum.stats.server.model.EndpointHitEntity;
 
 public final class StatsMapper {
-    private StatsMapper() {}
+    private StatsMapper() {
+    }
 
     public static EndpointHitEntity toEntity(EndpointHitDto dto) {
         EndpointHitEntity e = new EndpointHitEntity();
