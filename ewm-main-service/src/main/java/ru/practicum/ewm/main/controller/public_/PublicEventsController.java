@@ -44,7 +44,7 @@ public class PublicEventsController {
                 && rangeEnd != null && !rangeEnd.isBlank()) {
             var fmt = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             var start = java.time.LocalDateTime.parse(rangeStart, fmt);
-            var end   = java.time.LocalDateTime.parse(rangeEnd, fmt);
+            var end = java.time.LocalDateTime.parse(rangeEnd, fmt);
             if (end.isBefore(start)) {
                 throw new ru.practicum.ewm.main.exception.BadRequestException("rangeEnd must be after or equal to rangeStart");
             }

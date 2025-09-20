@@ -25,11 +25,11 @@ public interface ParticipationRequestRepository extends JpaRepository<Participat
 
     @Modifying(clearAutomatically = true, flushAutomatically = true)
     @Query("""
-    update ParticipationRequest r
-       set r.status = 'REJECTED'
-     where r.event.id = :eventId
-       and r.status = 'PENDING'
-""")
+       update ParticipationRequest r
+          set r.status = 'REJECTED'
+        where r.event.id = :eventId
+          and r.status = 'PENDING'
+       """)
     int rejectAllPendingByEventId(@Param("eventId") Long eventId);
 
 }

@@ -1,9 +1,11 @@
+# ДЛЯ ЛОКАЛЬНОГО ЗАПУСКА ТЕСТОВ
+
 server:
   port: 8080
 
 spring:
   datasource:
-    url: jdbc:postgresql://main-db:5432/ewm_main
+    url: jdbc:postgresql://localhost:6542/ewm_main
     username: postgres
     password: postgres
 
@@ -25,8 +27,11 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: UTC
 
+#stats:
+#  url: ""   # локально статистику отключаем
+
 stats:
-  url: http://stats-service:9090
+  url: http://localhost:9090
 
 app:
   name: ewm-main-service

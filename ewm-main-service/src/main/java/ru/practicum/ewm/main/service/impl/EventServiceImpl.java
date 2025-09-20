@@ -6,6 +6,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.ewm.main.dto.*;
+import ru.practicum.ewm.main.dto.enums.StateAction;
 import ru.practicum.ewm.main.exception.ConflictException;
 import ru.practicum.ewm.main.exception.NotFoundException;
 import ru.practicum.ewm.main.exception.BadRequestException;
@@ -129,9 +130,9 @@ public class EventServiceImpl implements EventService {
             event.setEventDate(eventDate);
         }
 
-        if ("SEND_TO_REVIEW".equalsIgnoreCase(dto.getStateAction())) {
+        if (dto.getStateAction() == StateAction.SEND_TO_REVIEW) {
             event.setState(EventState.PENDING);
-        } else if ("CANCEL_REVIEW".equalsIgnoreCase(dto.getStateAction())) {
+        } else if (dto.getStateAction() == StateAction.CANCEL_REVIEW) {
             event.setState(EventState.CANCELED);
         }
 

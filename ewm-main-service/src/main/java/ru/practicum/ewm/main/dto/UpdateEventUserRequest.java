@@ -2,6 +2,7 @@ package ru.practicum.ewm.main.dto;
 
 import lombok.*;
 import jakarta.validation.constraints.*;
+import ru.practicum.ewm.main.dto.enums.StateAction;
 
 @Getter
 @Setter
@@ -30,8 +31,10 @@ public class UpdateEventUserRequest {
 
     private Boolean requestModeration;
 
-    /** "SEND_TO_REVIEW" | "CANCEL_REVIEW" */
-    private String stateAction;
+//    /** "SEND_TO_REVIEW" | "CANCEL_REVIEW" */
+//    private String stateAction;
+
+    private StateAction stateAction;
 
     @Size(min = 3, max = 120)
     private String title;
